@@ -1,0 +1,9 @@
+<form method="POST">
+    {% csrf_token %}
+    <input type="number" name="quantity" placeholder="Quantity" required>
+    <select name="transaction_type" required>
+        <option value="IN">Stock In</option>
+        <option value="OUT">Stock Out</option>
+    </select>
+    <button type="submit">Submit</button>
+</form>

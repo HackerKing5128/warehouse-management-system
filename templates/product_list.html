@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto">
+    <h1 class="text-2xl font-semibold">Product List</h1>
+    <table class="min-w-full mt-4">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Cost Price</th>
+                <th>Selling Price</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.cost_price }}</td>
+                <td>{{ product.selling_price }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>
+                    <a href="{% url 'edit_product' product.id %}" class="btn btn-blue">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
